@@ -1,1 +1,1 @@
-execute if 
+execute if predicate blood_moon:day run function blood_moon:end_blood_moon

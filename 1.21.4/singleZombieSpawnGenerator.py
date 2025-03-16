@@ -21,7 +21,7 @@ class Enemy():
     def tags_to_list(self):
         res = "["
         for tag in self.tags:
-            res += f"\"{NAMESPACE}:{tag}\","
+            res += f"\"{NAMESPACE}.{tag}\","
         res += "]"
         return res
     

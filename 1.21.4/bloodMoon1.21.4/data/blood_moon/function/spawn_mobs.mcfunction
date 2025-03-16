@@ -1,13 +1,7 @@
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
-summon minecraft:zombie ~ ~128 ~ {Tags:["blood_moon_spread"]}
+function blood_moon:spawn_single_zombie
+execute as @a run spreadplayers ~ ~ 0 50 false @e[tag=blood_moon.spread]
+tag @e[tag=blood_moon.spread] remove blood_moon.spread
 
-spreadplayers ~ ~ 0 50 false @e[tag=blood_moon_spread]
-tag @e[tag=blood_moon_spread] remove blood_moon_spread
+say Zombie
+execute if data storage blood_moon:data is_blood_moon run schedule function blood_moon:spawn_mobs 1s
+
